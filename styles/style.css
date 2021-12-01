@@ -1,0 +1,116 @@
+/* 
+Usei o display flex em algumas classes apenas pra deixar bonito espero que não tenha problema 
+@joaolassi
+*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-image: url(./../img/bsb.jpg);
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  padding: 20px;
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25pt;
+  color: white;
+
+  background-color: #031424;
+}
+
+.container-main {
+  color: white;
+  font-size: 22pt;
+  text-align: center;
+}
+
+.curiosidades {
+  position: relative;
+
+  background-color: #031424;
+  background-position: absolute;
+  background-size: cover;
+
+  color: white;
+
+  height: 7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lista-curiosidades-container {
+  position: relative;
+  padding: 7px;
+  margin: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 25px;
+
+}
+
+.lista-curiosidades-container>ol>li {
+  color: rgb(255, 255, 255);
+  margin: 30px;
+
+}
+
+.container-contatos {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Open Sans', sans-serif;
+
+  background-color: #031424;
+  background-position: absolute;
+}
+
+.contatos {
+  margin: 4vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.contatos>a {
+  margin: 1vw;
+  width: auto;
+
+  text-decoration: none;
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  transition-duration: 1s;
+}
+
+.contatos>a:hover {
+  margin-left: 3vw;
+  margin-right: 3vw;
+
+  color: #696655;
+
+  transition-duration: 1s;
+}
+
+.footer{
+  width: 100%;
+  height: 13vh;
+  background-image: url(../img/bsbFooter.jpg);
+}
+
+.header{
+  background-color: turquoise;
+}
