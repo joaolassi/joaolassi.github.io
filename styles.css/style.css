@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+body {
+  /* Display grid para orgnanizar o conteúdo em colunas */
+  display: grid;
+  
+  /* Dou o tamanho das colunas, a primeira etá em 700px e a segunda em 2fr */
+  grid-template-columns: 700px 2fr;
+  background-image: url("../img/gothan.jpg");
+  font-family: 'Roboto', sans-serif;
+
+  /* Configuro como vai ser o layout do conteúdo */
+  grid-template-areas:
+    'header header'
+    'aside main'
+    'footer footer';
+}
+
+body header {
+  padding: 10px;
+  background-color: #2622285e;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: header;
+}
+
+body aside {
+  text-align: center;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: aside;
+}
+
+body main {
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: main;
+}
+
+body footer {
+  padding: 25px;
+
+  text-align: center;
+
+  background-color: #2622285e;
+
+  /* Nomeio o conteúdo para que possa configurar o layout */
+  grid-area: footer;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-family: 'Estonia', cursive;
+  font-size: 70pt;
+  padding: 5px;
+
+  /* Adiciono espaço entre as letras do título */
+  letter-spacing: 15px;
+}
+
+h2 {
+  padding: 10px;
+  font-family: 'Estonia', cursive;
+  font-size: 40pt;
+  color: white;
+  margin-left: 260px;
+  text-align: justify;
+/* //não estava centralizando como gostaria que ficasse, fiz essa gambiarra. */
+}
+
+h3 {
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+h4 {
+  color: white;
+  text-align: center;
+}
+
+.galeria {
+  margin: 25px;
+  gap: 10px;
+  padding: 5px;
+}
+
+.membros {
+  /* Margin para deixar os membros centralizados */
+  margin-left: 40px;
+}
+
+.membro img {
+  border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  border: solid 1px;
+  border-color: white;
+  cursor: pointer;
+}
+
+.membro {
+  margin: 20px;
+  float: left;
+  /* Adicionar tempo para dar sentimento de movimento e suavizar a animação */
+  transition: ease-in 200ms;
+}
+
+.membro:hover {
+  /* Aumenta o tamanho do elemento em 1.2x */
+  transform: scale(1.2);
+}
+
+.formulario {
+  width: 100%;
+}
+
+.botoes-form {
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilização do botão "salvar" do formulário que está com a tag "p" */
+.its-a-trap {
+  padding: 15px;
+  
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-left: 25px; 
+
+  text-align: center;
+  font-size: 15px;
+  color: white;
+
+  box-shadow: 1px 1px rgb(163, 163, 163);
+  border-radius: 20px;
+  background-color: rgb(71, 81, 109);
+
+  cursor: pointer;
+  transition: ease-in 100ms;
+}
+
+.limpar {
+  padding: 15px;
+  
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin-left: 15px; 
+
+  text-align: center;
+  font-size: 15px;
+  color: white;
+
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(165, 168, 182);
+
+  cursor: pointer;
+  transition: ease-in 100ms;
+}
+
+.its-a-trap:hover {
+  background-color: rgb(105, 119, 160);
+}
+
+.limpar:hover {
+  background-color: rgb(105, 119, 160);
+}
+
+.botao{
+  position: fixed; 
+  bottom: 2%; 
+  left: 88%; 
+  z-index: 10000000;
+  cursor: help;
+}
+
+/* Com ">" seleciona apenas a imagem da classe */
+.botao>a>img{
+  width: 180px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+ 0% {
+  transform: rotatez(0deg);
+ }
+ 100% {
+  transform: rotatez(360deg);
+ }
+}
+
+/* Sendo hackeado pelo Batman */
+/* Defino que o checkbox não aparece no html em momento algum */
+#ischecked {
+  display: none;
+}
+/* Id hackeado que apenas está com "display: none;" até que cliquemos no checkbox */
+#hackeado{
+  display: none;
+  position: fixed;
+  padding: 100px;
+  margin-top: 50px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  z-index: 9999;
+  background-color: rgba(99, 99, 30, 0.555);
+}
+
+/* Quando clico no checkbox, ou no caso, no label dele, eu altero a visualizaão da div com id "hackeado" 
+que até então estava com "display: none;" para "display: block;"*/
+#ischecked:checked ~ #hackeado{
+  display: block;
+  background-image: url(../img/batman.jpg);
+}
+
+/* Esta é a parte onde eu altero as propriedades dos elementos (nas tags neste caso) para quando o checkbox está marcado */
+/* Só lembrando que "~" seleciona o elemento filho, e é por isso que eu coloquei o checkbox em cima de todas as propriedades no HTML */
+#ischecked:checked~header,
+#ischecked:checked~aside,
+#ischecked:checked~footer, 
+#ischecked:checked~main {
+  display: block;
+  margin: 10px; 
+  animation: hacked 2s linear infinite;
+}
+
+/* Apenas coloquei uma animação de rotação infinita para quando clicar no checkbox */
+@keyframes hacked {
+  0% {
+    opacity: 0.1;
+    ransform: rotatez(360deg);
+  }
+  100% {
+    opacity: 0.1;
+    transform: rotatez(360deg);
+  }
+}
+
+/* Texto que aparece quando o batman hackeia o cidadão desavisado */
+.txt-hackeado{
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 25px;
+  justify-content: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.541);
+}
+
+.txt-hackeado>.batsy{
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  letter-spacing: 5px;
+}
+
+.rapido{
+  display: hidden;
+  justify-content: center;
+  position: relative;
+  bottom: 60px;
+  color: white;
+  font-size: 14px;
+
+  z-index: -1;
+}
+
+.botao-fuga{
+  display: flex;
+  justify-content: center;
+
+  z-index: 9998;
+}
+
+/* Botão representando pela tag "p" para a fuga */
+.escape{
+  margin-top: 25px;
+  padding: 25px;
+  width: 250px;
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+
+  cursor: help;
+}
+
+/* Estilização do botão com o hover */
+label>.escape:hover{
+  position: relative;
+  bottom: 250px;
+  right: 300px;
+  background-color: #fc4a1a;
+}
+
